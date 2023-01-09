@@ -1,0 +1,38 @@
+{
+  "name": "wanderlist",
+  "version": "1.0.0",
+  "description": "A trip planner",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eevee2023/WanderList.git"
+  },
+  "author": "Jay Cheskis, Corey McClendon-Brown, Elisa Nie, Coral Dabarera Edelson, Liam Jeon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eevee2023/WanderList/issues"
+  },
+  "homepage": "https://github.com/Eevee2023/WanderList#readme",
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.6.2"
+  }
+}
