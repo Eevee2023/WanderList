@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import TripCard from './TripCard.jsx';
 import NavBar from './NavBar.jsx';
+import Dropdown from './Dropdown.jsx'
 
 const Dashboard = (props) => {
   const [index, setIndex] = useState(0);
@@ -18,12 +19,14 @@ const Dashboard = (props) => {
 
   return(
     <div>
-      <NavBar trips={trips} handleIndexChange={handleIndexChange}/>
-      {trips[index]}
+      <NavBar>
+      </NavBar>
     </div>
   )
 }
 
+//  <NavBar trips={trips} handleIndexChange={handleIndexChange}/>
+//{trips[index]}
 
 
 export default Dashboard;
