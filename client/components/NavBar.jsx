@@ -7,7 +7,9 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import AcUnitIcon from '@mui/icons-material/AcUnit';
+import AirplaneTicketIcon from '@mui/icons-material/AirplaneTicket';
+//import AcUnitIcon from '@mui/icons-material/AcUnit';
+import Dropdown from './Dropdown.jsx'
 
 
 
@@ -19,18 +21,18 @@ export default function NavBar() {
       <AppBar position='static'>
         <Toolbar>
       
-            <AcUnitIcon 
+            <AirplaneTicketIcon
             sx={{ color: 'white', fontSize: '40px' }}
             href="/">
                 
-            </AcUnitIcon>
+            </AirplaneTicketIcon>
         
           <Button 
           className='navPoller' 
           variant='outlined'
           sx={{color:'white', borderColor: 'gray', fontSize: '20px', margin: '12px'}}
           href="/homepage">
-          Poller
+          WanderList
           </Button>
           <Button 
           href="/Login"
@@ -47,12 +49,16 @@ export default function NavBar() {
           <Button
           href="/" 
           sx={{color:'white', borderColor: 'gray'}}
-          >Add a Poll
+          >Your Trips
           </Button>
           <Button 
           sx={{color:'white', borderColor: 'gray'}}
           href="/1" 
-          >Take a Poll!
+          >Add Trip
+          </Button>
+          <Button variant='outlined'
+          sx={{color:'white'}}> 
+          <Dropdown />
           </Button>
         </Toolbar>
       </AppBar>
