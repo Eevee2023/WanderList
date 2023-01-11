@@ -10,7 +10,7 @@ import DraftsIcon from '@mui/icons-material/Drafts';
 import SendIcon from '@mui/icons-material/Send';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import StarBorder from '@mui/icons-material/StarBorder';
+import Popover from '@mui/material/Popover';
 import AirplaneTicketIcon from '@mui/icons-material/AirplaneTicket';
 //import Homepage from './Homepage.jsx';
 import { useNavigate } from "react-router-dom";
@@ -22,6 +22,7 @@ export default function Dropdown(props) {
 
   let pollData = props.pollData
   const navigate = useNavigate();
+  const [anchorEl, setAnchorEl] = React.useState(null)
 
   //button
   const pollClick = () => {
@@ -36,10 +37,17 @@ export default function Dropdown(props) {
 
 
   return (
+   
+
     <List
       sx={{ width: '100%', maxWidth: 360 }}
       component="nav"
       aria-labelledby="nested-list-subheader"
+      anchorEl={anchorEl}
+    getContentAnchorEl={null}
+    anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+    transformOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+
       subheader={
         <ListSubheader component="div" id="nested-list-subheader">
           
@@ -64,5 +72,6 @@ export default function Dropdown(props) {
       </Collapse>
 
     </List>
+    
   );
 }
