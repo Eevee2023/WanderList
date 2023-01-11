@@ -15,6 +15,7 @@ travelsController.returnAll = async (req, res, next) => {
 
 travelsController.createTrip = async (req, res, next) => {
     try {
+      console.log('made it to createtrip!')
         const { location, startDate, endDate, packing_list, itinerary, notes } = req.body;
         console.log(location, 'test location');
         const result = await Travel.create({ location, startDate, endDate, packing_list, itinerary, notes });

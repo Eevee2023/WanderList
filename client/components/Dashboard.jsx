@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import TripCard from './TripCard.jsx';
 import NavBar from './NavBar.jsx';
 import Form from './Form.jsx'
+import Dropdown from './Dropdown.jsx'
 
 
 
