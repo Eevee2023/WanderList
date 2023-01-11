@@ -20,11 +20,11 @@ const TravelSchema = new mongoose.Schema({
       required: true
     },
     startDate: {
-      type: Date,
+      type: String,
       required: false
     },
     endDate: {
-      type: Date,
+      type: String,
       required: false
     },
     packing_list: {

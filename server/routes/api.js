@@ -25,7 +25,7 @@ router.get('/retrieveTrip',
   }
 )
 
-router.get('/createTrip',
+router.post('/createTrip',
   travelsController.createTrip,
   (req, res) => {
     return res.status(200);
