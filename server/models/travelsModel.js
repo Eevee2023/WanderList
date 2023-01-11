@@ -1,44 +1,44 @@
 const mongoose = require('mongoose');
- //enter string here or use .env
+//enter string here or use .env
 const MONGO_URI = 'mongodb+srv://teameevee:thegoat@cluster0.wvcjctj.mongodb.net/?retryWrites=true&w=majority';
 
 
 mongoose
-    .connect(MONGO_URI, {
-        // options for the connect method to parse the URI
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        // sets the name of the DB that our collections are part of
-        dbName: 'TravelsDB',
-    })
-    .then(() => console.log('Connected to Mongo DB.'))
-    .catch((err) => console.log(err));
+  .connect(MONGO_URI, {
+    // options for the connect method to parse the URI
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    // sets the name of the DB that our collections are part of
+    dbName: 'TravelsDB',
+  })
+  .then(() => console.log('Connected to Mongo DB.'))
+  .catch((err) => console.log(err));
 
 const TravelSchema = new mongoose.Schema({
-    location: {
-      type: String,
-      required: true
-    },
-    startDate: {
-      type: Date,
-      required: false
-    },
-    endDate: {
-      type: Date,
-      required: false
-    },
-    packing_list: {
-      type: Array,
-      required: false
-    },
-    itinerary: {
-      type: Array,
-      required: false,
-    },
-    notes: {
-      type: Array,
-      required: false
-    }
+  location: {
+    type: String,
+    required: true
+  },
+  startDate: {
+    type: String,
+    required: false
+  },
+  endDate: {
+    type: String,
+    required: false
+  },
+  packing_list: {
+    type: Array,
+    required: false
+  },
+  itinerary: {
+    type: Array,
+    required: false,
+  },
+  notes: {
+    type: Array,
+    required: false
+  }
 });
 
 

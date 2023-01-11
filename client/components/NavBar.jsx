@@ -18,7 +18,9 @@ export default function NavBar(props) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position='static'>
+      <AppBar
+      sx={{backgroundColor:'#E84855'}}
+       position='static'>
         <Toolbar>
       
             <AirplaneTicketIcon
@@ -29,36 +31,32 @@ export default function NavBar(props) {
         
           <Button 
           className='navPoller' 
-          variant='outlined'
-          sx={{color:'white', borderColor: 'gray', fontSize: '20px', margin: '12px'}}
+          variant='text'
+          sx={{color:'white', fontSize: '20px', margin: '12px'}}
           href="/homepage">
           WanderList
           </Button>
           <Button 
           href="/Login"
-          variant='outlined'
+          variant='text'
           sx={{color:'white'}}
           >Login
           </Button>
           <Button 
           href="/Signup" 
-          variant='outlined'
+          variant='text'
           sx={{color:'white'}}
           >SignUp
           </Button>
           <Button
           href="/" 
-          sx={{color:'white', borderColor: 'gray'}}
+          sx={{color:'white'}}
           >Your Trips
           </Button>
           <Button 
-          sx={{color:'white', borderColor: 'gray'}}
+          sx={{color:'white'}}
           href="/1" 
           >Add Trip
-          </Button>
-          <Button variant='outlined'
-          sx={{color:'white'}}> 
-          <Dropdown data={props.data} />
           </Button>
         </Toolbar>
       </AppBar>
