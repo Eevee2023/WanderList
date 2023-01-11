@@ -35,6 +35,10 @@ export default function Dropdown(props) {
     setOpen(!open);
   };
 
+  let data=props.data
+  console.log(data)
+
+
 
   return (
    
@@ -43,10 +47,7 @@ export default function Dropdown(props) {
       sx={{ width: '100%', maxWidth: 360 }}
       component="nav"
       aria-labelledby="nested-list-subheader"
-      anchorEl={anchorEl}
-    getContentAnchorEl={null}
-    anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-    transformOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+     
 
       subheader={
         <ListSubheader component="div" id="nested-list-subheader">

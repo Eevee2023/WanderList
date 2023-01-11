@@ -14,7 +14,7 @@ import Dropdown from './Dropdown.jsx'
 
 
 
-export default function NavBar() {
+export default function NavBar(props) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>

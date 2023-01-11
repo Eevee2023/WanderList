@@ -4,7 +4,8 @@ const travelsController = {};
 
 travelsController.returnAll = async (req, res, next) => {
   try {
-    const result = await Travel.find();
+    const result = await Travel.find({});
+    console.log('in get request')
     res.locals.allTravels = result;
     return next();
   } catch(err) {
