@@ -20,6 +20,7 @@ import { useNavigate } from "react-router-dom";
 export default function Dropdown(props) {
   const [open, setOpen] = React.useState(false);
 
+  /* old code sorry
   let pollData = props.pollData
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -28,6 +29,7 @@ export default function Dropdown(props) {
   const pollClick = () => {
     navigate(`/display/${poll_id}`)
   }
+  */
   // url for get all fetch api/poll/${poll_id}
 
   // button functionality

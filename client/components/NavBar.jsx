@@ -58,7 +58,7 @@ export default function NavBar(props) {
           </Button>
           <Button variant='outlined'
           sx={{color:'white'}}> 
-          <Dropdown />
+          <Dropdown data={props.data} />
           </Button>
         </Toolbar>
       </AppBar>

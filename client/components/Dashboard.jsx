@@ -9,7 +9,7 @@ const Dashboard = (props) => {
   const [index, setIndex] = useState(0);
   const [data, setData] = useState([])
 
-  const headers = {}
+  //const headers = {}
 
   const handleIndexChange = (newIndex) => {
     setIndex(newIndex);
@@ -27,22 +27,25 @@ const Dashboard = (props) => {
     }
   })
       .then((res) => res.json())
-      .then((data) => {
-        
-        setData(data);
+      .then((apple) => {
+
+        setData(apple);
+
       })
       .catch((err) => {
         log: 'Error was found';
       });
   }, []);
+
+
  
 
   //set all of the prop data to create links in the nav bar
   //create an array of all of the trips
-  const trips = [];
-  for(key in props.data.trips) {
-    trips.push(<TripCard tripInfo={props.data.trips[key]}/>)
-  }
+  // const trips = [];
+  // for(key in props.data.trips) {
+  //   trips.push(<TripCard tripInfo={props.data.trips[key]}/>)
+  // }
 
   return(
     <div>
