@@ -16,6 +16,8 @@ import Dropdown from './Dropdown.jsx'
 
 export default function NavBar(props) {
 
+
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static'>
