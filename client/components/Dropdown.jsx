@@ -10,7 +10,7 @@ import DraftsIcon from '@mui/icons-material/Drafts';
 import SendIcon from '@mui/icons-material/Send';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import StarBorder from '@mui/icons-material/StarBorder';
+import Popover from '@mui/material/Popover';
 import AirplaneTicketIcon from '@mui/icons-material/AirplaneTicket';
 //import Homepage from './Homepage.jsx';
 import { useNavigate } from "react-router-dom";
@@ -20,13 +20,16 @@ import { useNavigate } from "react-router-dom";
 export default function Dropdown(props) {
   const [open, setOpen] = React.useState(false);
 
+  /* old code sorry
   let pollData = props.pollData
   const navigate = useNavigate();
+  const [anchorEl, setAnchorEl] = React.useState(null)
 
   //button
   const pollClick = () => {
     navigate(`/display/${poll_id}`)
   }
+  */
   // url for get all fetch api/poll/${poll_id}
 
   // button functionality
@@ -34,12 +37,20 @@ export default function Dropdown(props) {
     setOpen(!open);
   };
 
+  let data=props.data
+  console.log(data)
+
+
 
   return (
+   
+
     <List
       sx={{ width: '100%', maxWidth: 360 }}
       component="nav"
       aria-labelledby="nested-list-subheader"
+     
+
       subheader={
         <ListSubheader component="div" id="nested-list-subheader">
           
@@ -64,5 +75,6 @@ export default function Dropdown(props) {
       </Collapse>
 
     </List>
+    
   );
 }

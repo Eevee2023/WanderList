@@ -14,7 +14,7 @@ import Dropdown from './Dropdown.jsx'
 
 
 
-export default function NavBar() {
+export default function NavBar(props) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -58,7 +58,7 @@ export default function NavBar() {
           </Button>
           <Button variant='outlined'
           sx={{color:'white'}}> 
-          <Dropdown />
+          <Dropdown data={props.data} />
           </Button>
         </Toolbar>
       </AppBar>
