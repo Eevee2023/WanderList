@@ -1,27 +1,27 @@
-const travelsDB = require('../models/travelsModel.js');
+const Travel = require('../models/travelsModel.js');
 
 const travelsController = {};
 
 travelsController.returnAll = async (req, res, next) => {
   try {
-    const aT = await travelsDB.find();
-    res.locals.allTravels = aT;
-    res.sendStatus(200).json(res.locals.allTravels);
+    const result = await Travel.find();
+    res.locals.allTravels = result;
     return next();
   } catch(err) {
-    return next('Put an err object in here')
+    return next('Error in travelsController.returnAll. Put an err object in here')
   }
 }
 
 travelsController.createTrip = async (req, res, next) => {
     try {
         const { location, startDate, endDate, packing_list, itinerary, notes } = req.body;
-        const nt = await travelsDB.createONe({location: location, startDate: startDate, endDate: endDate, packing_list: packing_list, itinerary: itinerary, notes: notes});
-        res.locals.newTrip = nt;
-        res.sendStatus(200).json(res.locals.newTrip);
+        console.log(location, 'test location');
+        const result = await Travel.create({ location, startDate, endDate, packing_list, itinerary, notes });
+        console.log(result,'createTrip travels method');
+        res.locals.newTrip = result;
         return next();
     } catch(err){
-        return next('Put an err object in here')
+        return next('Error in travelsController.createTrip. Put an err object in here')
     }
 }
 
@@ -34,7 +34,14 @@ travelsController.updateTrip = async (req, res, next) => {
 }
 
 travelsController.deleteTrip = async (req, res, next) => {
-  
+  try {
+    const { _id } = req.body;
+    const result = await Travel.findByIdAndDelete({ _id });
+    res.local.deletedTrip = result;
+    return next();
+  } catch(err){
+    return next('Error in travelsController.deleteTrip. Put an err object in here')
+  }
 }
 
 module.exports = travelsController;

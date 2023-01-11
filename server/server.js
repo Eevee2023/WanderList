@@ -1,5 +1,6 @@
 const express = require('express');
 const apiRouter = require('./routes/api.js');
+const travelsController = require('./controllers/travelsController');
 
 const PORT = 3000;
 const app = express();
@@ -11,9 +12,13 @@ app.use(express.urlencoded( {extended: true} ));
 //use apiRouter for db requests
 app.use('/api', apiRouter);
 
-//create a handler for get requests to /travels
-app.get('/travels', (req, res) => {
-
+//create a handlers for all requests to /travels
+app.get('/travels', travelsController.returnAll, (req, res) => {
+  return res.status(200).json(res.locals.allTravels);
+})
+//post
+app.post('/travels', travelsController.createTrip, (req, res) => {
+  return res.status(200).json(res.locals.newTrip);
 })
 
 // catch-all route handler for any requests to an unknown route
