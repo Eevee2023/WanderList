@@ -1,10 +1,25 @@
-import { useState } from 'react';
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+
+import PackingList from './PackingList.jsx'
+import Itinerary from './Itinerary.jsx'
+import Notes from './Notes.jsx'
+
+
+/*
+trip1: {
+      location: 'Chicago',
+      startDate: '1/1/23',
+      endDate: '1/10/23',
+      packingList: ['Shirts', 'Hats', 'Pants', 'Phone', 'Wallet', 'Laptop'],
+      itinerary: ['Go to beach', 'Go to movies', 'Go hiking', 'Rent a car', 'Eat dinner'],
+      notes: ['Fake note 1', 'Fake note 2', 'Fake note 3', 'Fake note 4']
+    }
+*/
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -47,93 +62,32 @@ function TripCard(props) {
     };
   
     return (
-    <>
-      <h1>Chicago</h1>
-      <h1>Start Date:</h1>
-      <h1>End Date:</h1>
+    <Box sx={{ width: '100%', border: 1 }}>
+      <div style={{display: 'flex', justifyContent: 'space-around', marginTop: '25px'}}>
+        <Typography variant="h6" >{props.data.location}</Typography>
+        <Typography variant="h6" >Start Date: {props.data.startDate}</Typography>
+        <Typography variant="h6" >End Date: {props.data.endDate}</Typography>
+      </div>
       <Box sx={{ width: '100%' }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-            <Tab label="Item One" {...a11yProps(0)} />
-            <Tab label="Item Two" {...a11yProps(1)} />
-            <Tab label="Item Three" {...a11yProps(2)} />
+            <Tab label="Packing List" {...a11yProps(0)} />
+            <Tab label="Itinerary" {...a11yProps(1)} />
+            <Tab label="Notes" {...a11yProps(2)} />
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-          Item One
+            <PackingList data={props.data.packingList} />
         </TabPanel>
         <TabPanel value={value} index={1}>
-          Item Two
+          <Itinerary data={props.data.itinerary} />
         </TabPanel>
         <TabPanel value={value} index={2}>
-          Item Three
+          <Notes data={props.data.notes} />
         </TabPanel>
       </Box>
-    </>
+    </Box>
     );
 }
 
 export default TripCard;
-
-/*
-import * as React from 'react';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Checkbox from '@mui/material/Checkbox';
-import IconButton from '@mui/material/IconButton';
-import CommentIcon from '@mui/icons-material/Comment';
-
-export default function CheckboxList() {
-  const [checked, setChecked] = React.useState([0]);
-
-  const handleToggle = (value) => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
-
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
-
-    setChecked(newChecked);
-  };
-
-  return (
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      {[0, 1, 2, 3].map((value) => {
-        const labelId = `checkbox-list-label-${value}`;
-
-        return (
-          <ListItem
-            key={value}
-            secondaryAction={
-              <IconButton edge="end" aria-label="comments">
-                <CommentIcon />
-              </IconButton>
-            }
-            disablePadding
-          >
-            <ListItemButton role={undefined} onClick={handleToggle(value)} dense>
-              <ListItemIcon>
-                <Checkbox
-                  edge="start"
-                  checked={checked.indexOf(value) !== -1}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{ 'aria-labelledby': labelId }}
-                />
-              </ListItemIcon>
-              <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
-            </ListItemButton>
-          </ListItem>
-        );
-      })}
-    </List>
-  );
-}
-*/
-
