@@ -3,8 +3,16 @@ const travelsController = require('../controllers/travelsController.js')
 const router = express.Router();
 
 
+router.get('/',
+  travelsController.returnAll,
+  (req, res) => {
+    return res.status(res.locals);
+  }
+)
+
+
 router.get('/createTrip',
-  // travelsController.createTrip,
+  travelsController.createTrip,
   (req, res) => {
     return res.status(200).send('test');
   }
