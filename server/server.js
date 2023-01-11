@@ -29,6 +29,10 @@ app.post('/travels', travelsController.createTrip, (req, res) => {
   return res.status(200).json(res.locals.newTrip);
 })
 
+app.delete('/travels', travelsController.deleteTrip, (req, res) => {
+  return res.status(200);
+})
+
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.sendStatus(404));
 

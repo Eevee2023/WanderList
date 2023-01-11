@@ -77,7 +77,7 @@ function TripCard(props) {
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-            <PackingList data={props.data.packingList} />
+            <PackingList data={props.data.packing_list} />
         </TabPanel>
         <TabPanel value={value} index={1}>
           <Itinerary data={props.data.itinerary} />

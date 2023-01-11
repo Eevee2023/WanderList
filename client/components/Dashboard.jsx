@@ -8,6 +8,7 @@ import Form from './Form.jsx'
 const Dashboard = (props) => {
   const [index, setIndex] = useState(0);
   const [data, setData] = useState([])
+  const [cards, setCards] = useState([]);
 
   //const headers = {}
 
@@ -42,16 +43,20 @@ const Dashboard = (props) => {
 
   //set all of the prop data to create links in the nav bar
   //create an array of all of the trips
-  // const trips = [];
-  // for(key in props.data.trips) {
-  //   trips.push(<TripCard tripInfo={props.data.trips[key]}/>)
-  // }
+  useEffect(() => {
+    const trips = [];
+    console.log('data',data);
+    for(let i = 0; i < data.length; i++) {
+      trips.push(<TripCard data={data[i]}/>)
+    }
+    setCards(trips);
+  }, [data])
 
   return(
     <div>
-      <NavBar data={data}>
+      <NavBar data={data} handleIndexChange={handleIndexChange}> 
       </NavBar>
-      <Form></Form>
+      {cards[index]}
     </div>
   )
 }

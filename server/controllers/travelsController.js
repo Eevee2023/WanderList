@@ -37,7 +37,8 @@ travelsController.updateTrip = async (req, res, next) => {
 travelsController.deleteTrip = async (req, res, next) => {
   try {
     const { _id } = req.body;
-    const result = await Travel.findByIdAndDelete({ _id });
+    console.log(_id);
+    const result = await Travel.deleteMany({});
     res.local.deletedTrip = result;
     return next();
   } catch(err){
