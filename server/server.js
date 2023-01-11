@@ -7,8 +7,14 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded( {extended: true} ));
 
+
 //use apiRouter for db requests
 app.use('/api', apiRouter);
+
+//create a handler for get requests to /travels
+app.get('/travels', (req, res) => {
+
+})
 
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.sendStatus(404));
