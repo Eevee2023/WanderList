@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import TripCard from './TripCard.jsx';
 import NavBar from './NavBar.jsx';
-import Dropdown from './Dropdown.jsx'
+import Form from './Form.jsx'
 
 const Dashboard = (props) => {
   const [index, setIndex] = useState(0);
@@ -21,6 +21,7 @@ const Dashboard = (props) => {
     <div>
       <NavBar>
       </NavBar>
+      <Form></Form>
     </div>
   )
 }
