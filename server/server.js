@@ -18,7 +18,7 @@ app.use(express.urlencoded( {extended: true} ));
 app.use(cors());
 
 //use apiRouter for db requests
-//app.use('/api', apiRouter);
+app.use('/api', apiRouter);
 
 //create a handlers for all requests to /travels
 app.get('/travels', travelsController.returnAll, (req, res) => {

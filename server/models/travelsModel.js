@@ -15,30 +15,30 @@ mongoose
   .catch((err) => console.log(err));
 
 const TravelSchema = new mongoose.Schema({
-  location: {
-    type: String,
-    required: true
-  },
-  startDate: {
-    type: String,
-    required: false
-  },
-  endDate: {
-    type: String,
-    required: false
-  },
-  packing_list: {
-    type: Array,
-    required: false
-  },
-  itinerary: {
-    type: Array,
-    required: false,
-  },
-  notes: {
-    type: Array,
-    required: false
-  }
+    location: {
+      type: String,
+      required: true
+    },
+    startDate: {
+      type: String,
+      required: false
+    },
+    endDate: {
+      type: String,
+      required: false
+    },
+    packing_list: {
+      type: Array,
+      required: false
+    },
+    itinerary: {
+      type: Array,
+      required: false,
+    },
+    notes: {
+      type: Array,
+      required: false
+    }
 });
 
 
@@ -49,20 +49,20 @@ const TravelSchema = new mongoose.Schema({
 
 
 // {
-//   user: username,
-//   password: password,
-//   trips: {
-//     trip1: {
-//       location: City,
-//       startDate: Date,
-//       endDate: Date,
-//       packing list: [Array of items to pack],
-//       itinerary: [Array in order of what to do],
-//       notes: [Array of notes]
-//     },
-//     trip2: {
-//       location: City,
-//       startDate: Date,
+//  ser: username,
+// password: password,
+// trips: {
+//   trip1: {
+//     location: City,
+//     startDate: Date,
+//     endDate: Date,
+//     packing list: [Array of items to pack],
+//     itinerary: [Array in order of what to do],
+//     notes: [Array of notes]
+//   },
+//   trip2: {
+//     location: City,
+//     startDate: Date,
 //       endDate: Date,
 //       packing list: [Array of items to pack],
 //       itinerary: [Array in order of what to do],
